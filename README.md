@@ -7,13 +7,13 @@ The service has been carefully designed to effectively gather, analyze, and stor
 The system automatically scans various sources of press information in search of articles related to disabilities. This provides users with access to up-to-date data.
 
 ## Content analysis and evaluation
-The service analyzes the content of articles, extracting key information regarding different types of disabilities and content categories such as rehabilitation, symptoms, daily life, etc. Additionally, it evaluates the readability and usefulness of articles, enabling their classification based on "positivity."
+The service analyzes the content of articles, extracting key information regarding different types of disabilities and content categories such as rehabilitation, symptoms, daily life, etc. 
 
 ## User opinions and ratings
-Users can add opinions and rate the most important aspects of sources, allowing for the creation of a community-based assessment of article quality.
+Additionally, it evaluates the readability and usefulness of articles, enabling their classification based on "positivity." Users can add opinions and rate the most important aspects of sources, allowing for the creation of a community-based assessment of article quality.
 
 ## Configurable "positivity"
-Authorized users have the ability to adjust the metrics for evaluating articles according to their preferences, allowing for better customization of the service to individual needs.
+Authorized users have the ability to adjust the metrics for evaluating articles according to their preferences, determining which aspects are most important to them. This allows for better customization of the service to individual needs.
 
 ## Administrative interface
 The administrative interface facilitates management operations such as editing press information, moderating comments, and other related functions, ensuring smooth service operation.
