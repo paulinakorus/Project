@@ -20,3 +20,4 @@ The administrative interface facilitates management operations such as editing p
 
 With these features, the service provides easy access to valuable information about disabilities, enabling users to quickly find the data they need and build community knowledge on the subject.
 
+![image](https://github.com/paulinakorus/VolvoNetAcademy_Project/assets/119116148/f2c1f915-c8ed-446d-9c3c-ba3f5d5d1cfa)
