@@ -15,7 +15,10 @@ namespace Database
         {
             using (var context = new ProjectDbContext())
             {
+                context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();
+
+
                 Random random = new Random();
 
                 // content
@@ -68,7 +71,7 @@ namespace Database
                         UserId = userList[random.Next(userList.Count)].Id,
                         Title = "Title " + i.ToString(),
                         Comment = "Comment " + i.ToString(),
-                        PositivityLevel = random.Next(100, 500) / 100
+                        PositivityLevel = random.Next(100, 500) / 100.0
                     };
                     await context.Reviews.AddAsync(review);
                 }
@@ -82,8 +85,8 @@ namespace Database
                         Id = Guid.NewGuid(),
                         FirstName = "FirstName " + i.ToString(),
                         LastName = "LastName " + i.ToString(),
-                        ArticlesList = new List<Article>() {},
-                        AveragePositivityLevel = random.Next(100, 500) / 100
+                        ArticleId = Guid.NewGuid(),
+                        AveragePositivityLevel = random.Next(100, 500) / 100.0
                     };
                     await context.Authors.AddAsync(author);
                 }
@@ -101,23 +104,27 @@ namespace Database
                         Id = Guid.NewGuid(),
                         Title = "Title " + i.ToString(),
                         Description = "Description " + i.ToString(),
-                        AveragePositivityLevel = random.Next(100, 500) / 100
+                        AveragePositivityLevel = random.Next(100, 500) / 100.0,
+                        ArticleId = authors[random.Next(authors.Count)].Id,
+                        DisabilityId = disabilities[random.Next(disabilities.Count)].Id,
+                        ContentId = contents[random.Next(contents.Count)].Id
                     };
-
-                    var authorsForArticle = new List<Author>();
-
-                    for (int j = 0; j < random.Next(0, 5); j++)
-                    {
-                        var oneAuthor = authors[random.Next(authors.Count)];
-                        authorsForArticle.Add(oneAuthor);
-                        oneAuthor.ArticlesList.Add(article);
-                    }
-
-                    article.AuthorsList = authorsForArticle;
 
                     await context.Articles.AddAsync(article);
                 }
-                
+                await context.SaveChangesAsync();
+
+                // authors again
+                var articles = context.Articles.ToList();
+
+                foreach (var author in context.Authors) 
+                {
+                    int max = articles.Count;
+                    int number = random.Next(max);
+                    Guid id = articles[number].Id;
+                    author.ArticleId = id;
+                }
+
                 await context.SaveChangesAsync();
             }
         }

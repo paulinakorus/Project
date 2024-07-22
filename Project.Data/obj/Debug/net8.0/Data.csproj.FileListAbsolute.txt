@@ -129,3 +129,4 @@ C:\Users\pauko\Desktop\Studia\Kursy\Volvo NET Academy\Project\Project\Project.Da
 C:\Users\pauko\Desktop\Studia\Kursy\Volvo NET Academy\Project\Project\Project.Data\obj\Debug\net8.0\Data.pdb
 C:\Users\pauko\Desktop\Studia\Kursy\Volvo NET Academy\Project\Project\Project.Data\obj\Debug\net8.0\Data.genruntimeconfig.cache
 C:\Users\pauko\Desktop\Studia\Kursy\Volvo NET Academy\Project\Project\Project.Data\obj\Debug\net8.0\ref\Data.dll
+C:\Users\pauko\Desktop\Studia\Kursy\Volvo NET Academy\Project\Project\Project.Data\obj\Debug\net8.0\Data.sourcelink.json

@@ -66,3 +66,4 @@ C:\Users\pauko\Desktop\Studia\Kursy\Volvo NET Academy\Project\Project\Project.Da
 C:\Users\pauko\Desktop\Studia\Kursy\Volvo NET Academy\Project\Project\Project.Database\obj\Debug\net8.0\Database.pdb
 C:\Users\pauko\Desktop\Studia\Kursy\Volvo NET Academy\Project\Project\Project.Database\obj\Debug\net8.0\Database.genruntimeconfig.cache
 C:\Users\pauko\Desktop\Studia\Kursy\Volvo NET Academy\Project\Project\Project.Database\obj\Debug\net8.0\ref\Database.dll
+C:\Users\pauko\Desktop\Studia\Kursy\Volvo NET Academy\Project\Project\Project.Database\obj\Debug\net8.0\Database.sourcelink.json
