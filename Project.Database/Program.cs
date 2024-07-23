@@ -25,7 +25,7 @@ namespace Database
                 Description = "Brak słuchu"
             };
 
-            await ChangeContent(context.Contents.First(), content)
+            await DeleteContent(content);
         }
 
         // CREATE
@@ -221,7 +221,7 @@ namespace Database
             using (var context = new ProjectDbContext())
             {
                 var articleToChange = await context.Articles
-                    .FirstOrDefaultAsync(article => article.Equals(oldArticle));
+                    .FirstOrDefaultAsync(article => article.Id.Equals(oldArticle.Id));
 
                 if (articleToChange != null)
                 {
@@ -242,7 +242,7 @@ namespace Database
             using (var context = new ProjectDbContext())
             {
                 var authorToChange = await context.Authors
-                    .FirstOrDefaultAsync(author => author.Equals(oldAuthor));
+                    .FirstOrDefaultAsync(author => author.Id.Equals(oldAuthor.Id));
 
                 if (authorToChange != null)
                 {
@@ -261,7 +261,7 @@ namespace Database
             using (var context = new ProjectDbContext())
             {
                 var contentToChange = await context.Contents
-                    .FirstOrDefaultAsync(content => content.Equals(oldContent));
+                    .FirstOrDefaultAsync(content => content.Id.Equals(oldContent.Id));
 
                 if (contentToChange != null)
                 {
@@ -278,7 +278,7 @@ namespace Database
             using (var context = new ProjectDbContext())
             {
                 var disabilityToChange = await context.Disabilities
-                    .FirstOrDefaultAsync(disability => disability.Equals(oldDisability));
+                    .FirstOrDefaultAsync(disability => disability.Id.Equals(oldDisability.Id));
 
                 if (disabilityToChange != null)
                 {
@@ -295,7 +295,7 @@ namespace Database
             using (var context = new ProjectDbContext())
             {
                 var reviewToChange = await context.Reviews
-                    .FirstOrDefaultAsync(review => review.Equals(oldReview));
+                    .FirstOrDefaultAsync(review => review.Id.Equals(oldReview.Id));
 
                 if (reviewToChange != null)
                 {
@@ -313,7 +313,7 @@ namespace Database
             using (var context = new ProjectDbContext())
             {
                 var userToChange = await context.Users
-                    .FirstOrDefaultAsync(user => user.Equals(oldUser));
+                    .FirstOrDefaultAsync(user => user.Id.Equals(oldUser.Id));
 
                 if (userToChange != null)
                 {
@@ -323,6 +323,98 @@ namespace Database
                 }
 
                 await context.SaveChangesAsync();
+            }
+        }
+
+        // DELETE
+
+        private static async Task DeleteArticle(Article articleToDelete)
+        {
+            using (var context = new ProjectDbContext())
+            {
+                var article = await context.Articles
+                    .FirstOrDefaultAsync(article => article.Id.Equals(articleToDelete.Id));
+            
+                if (article != null)
+                {
+                    context.Articles.Remove(article);
+                    await context.SaveChangesAsync();
+                }
+            }
+        }
+
+        private static async Task DeleteAuthor(Author authorToDelete)
+        {
+            using (var context = new ProjectDbContext())
+            {
+                var author = await context.Authors
+                    .FirstOrDefaultAsync(auth => auth.Id.Equals(authorToDelete.Id));
+
+                if (author != null)
+                {
+                    context.Authors.Remove(author);
+                    await context.SaveChangesAsync();
+                }
+            }
+        }
+
+        private static async Task DeleteContent(Content contentToDelete)
+        {
+            using (var context = new ProjectDbContext())
+            {
+                var content = await context.Contents
+                    .FirstOrDefaultAsync(cont => cont.Id.Equals(contentToDelete.Id));
+
+                if (content != null)
+                {
+                    context.Contents.Remove(content);
+                    await context.SaveChangesAsync();
+                }
+            }
+        }
+
+        private static async Task DeleteDisability(Disability disabilityToDelete)
+        {
+            using (var context = new ProjectDbContext())
+            {
+                var disability = await context.Disabilities
+                    .FirstOrDefaultAsync(dis => dis.Id.Equals(disabilityToDelete.Id));
+
+                if (disability != null)
+                {
+                    context.Disabilities.Remove(disability);
+                    await context.SaveChangesAsync();
+                }
+            }
+        }
+
+        private static async Task DeleteReview(Review reviewToDelete)
+        {
+            using (var context = new ProjectDbContext())
+            {
+                var review = await context.Reviews
+                    .FirstOrDefaultAsync(rev => rev.Id.Equals(reviewToDelete.Id));
+
+                if (review != null)
+                {
+                    context.Reviews.Remove(review);
+                    await context.SaveChangesAsync();
+                }
+            }
+        }
+
+        private static async Task DeleteUser(Review userToDelete)
+        {
+            using (var context = new ProjectDbContext())
+            {
+                var user = await context.Users
+                    .FirstOrDefaultAsync(us => us.Id.Equals(userToDelete.Id));
+
+                if (user != null)
+                {
+                    context.Users.Remove(user);
+                    await context.SaveChangesAsync();
+                }
             }
         }
     }
