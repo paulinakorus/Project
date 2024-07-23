@@ -12,10 +12,26 @@ namespace Data
         public DbSet<Review> Reviews { get; set; }
         public DbSet<User> Users { get; set; }
 
+        public List<object> DbSets { get;  set; }
+
+        public ProjectDbContext()
+        {
+            DbSets = new List<object>
+            {
+                Articles,
+                Authors,
+                Contents,
+                Disabilities,
+                Reviews,
+                Users
+            };
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(LocalDB)\\mssqllocaldb;Database=ProjectDataBase;Trusted_Connection=True;Integrated Security=true;MultipleActiveResultSets=true;");
         }
+
     }
 }
 
