@@ -83,10 +83,12 @@ namespace Database
                 var userList = context.Users.ToList();
                 for (int i = 0; i < 10; i++)
                 {
+                    var user = userList[random.Next(userList.Count)];
                     var review = new Review()
                     {
                         Id = Guid.NewGuid(),
-                        UserId = userList[random.Next(userList.Count)].Id,
+                        UserId = user.Id,
+                        ReviewUser = user,
                         Title = "Title " + i.ToString(),
                         Comment = "Comment " + i.ToString(),
                         PositivityLevel = random.Next(100, 500) / 100.0
@@ -103,7 +105,6 @@ namespace Database
                         Id = Guid.NewGuid(),
                         FirstName = "FirstName " + i.ToString(),
                         LastName = "LastName " + i.ToString(),
-                        ArticleId = Guid.NewGuid(),
                         AveragePositivityLevel = random.Next(100, 500) / 100.0
                     };
                     await context.Authors.AddAsync(author);
@@ -117,34 +118,26 @@ namespace Database
 
                 for (int i = 0; i < 10; i++)
                 {
+                    var author = authors[random.Next(authors.Count)];
+                    var disability = disabilities[random.Next(disabilities.Count)];
+                    var content = contents[random.Next(contents.Count)];
                     var article = new Article()
                     {
                         Id = Guid.NewGuid(),
                         Title = "Title " + i.ToString(),
                         Description = "Description " + i.ToString(),
                         AveragePositivityLevel = random.Next(100, 500) / 100.0,
-                        ArticleId = authors[random.Next(authors.Count)].Id,
-                        DisabilityId = disabilities[random.Next(disabilities.Count)].Id,
-                        ContentId = contents[random.Next(contents.Count)].Id
+                        AuthorId = author.Id,
+                        ArticleAuthor = author,
+                        DisabilityId = disability.Id,
+                        ArticleDisability = disability,
+                        ContentId = content.Id,
+                        ArticleContent = content
                     };
 
                     await context.Articles.AddAsync(article);
                 }
                 await context.SaveChangesAsync();
-
-                // authors again
-                var articles = context.Articles.ToList();
-
-                foreach (var author in context.Authors) 
-                {
-                    int max = articles.Count;
-                    int number = random.Next(max);
-                    Guid id = articles[number].Id;
-                    author.ArticleId = id;
-                }
-                await context.SaveChangesAsync();
-
-                var type = context.DbSets[0].GetType();
             }
         }
 
@@ -227,9 +220,12 @@ namespace Database
                 {
                     articleToChange.Title = newArticle.Title;
                     articleToChange.Description = newArticle.Description;
-                    articleToChange.ArticleId = newArticle.ArticleId;
+                    articleToChange.AuthorId = newArticle.AuthorId;
+                    articleToChange.ArticleAuthor = newArticle.ArticleAuthor;
                     articleToChange.ContentId = newArticle.ContentId;
+                    articleToChange.ArticleContent = newArticle.ArticleContent;
                     articleToChange.DisabilityId = newArticle.DisabilityId;
+                    articleToChange.ArticleDisability = newArticle.ArticleDisability;
                     articleToChange.AveragePositivityLevel = newArticle.AveragePositivityLevel;
                 }
 
@@ -248,7 +244,6 @@ namespace Database
                 {
                     authorToChange.FirstName = newAuthor.FirstName;
                     authorToChange.LastName = newAuthor.LastName;
-                    authorToChange.ArticleId = newAuthor.ArticleId;
                     authorToChange.AveragePositivityLevel = newAuthor.AveragePositivityLevel;
                 }
 

@@ -5,7 +5,6 @@
         public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Guid ArticleId { get; set; }
         public double AveragePositivityLevel { get; set; }
     }
 }
