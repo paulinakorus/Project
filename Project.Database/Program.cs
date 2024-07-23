@@ -1,5 +1,6 @@
 ﻿using Data;
 using Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.Json;
 
 namespace Database 
@@ -9,6 +10,77 @@ namespace Database
         static async Task Main(string[] args)
         {
             await CreateData();
+            var articles = await ReadArticles();
+            var authors = await ReadAuthors();
+            var contents = await ReadContents();
+            var review = await ReadReview();
+            var users = await ReadUsers();
+        }
+
+        static async Task<List<Article>> ReadArticles()
+        {
+            using (var context = new ProjectDbContext())
+            {
+                var articles = await context.Articles
+                    .Where(article => !string.IsNullOrWhiteSpace(article.Title))
+                    .ToListAsync();
+                return articles;
+            }
+        }
+
+        static async Task<List<Author>> ReadAuthors()
+        {
+            using (var context = new ProjectDbContext())
+            {
+                var authors = await context.Authors
+                    .Where(author => !string.IsNullOrWhiteSpace(author.FirstName))
+                    .ToListAsync();
+                return authors;
+            }
+        }
+
+        static async Task<List<Disability>> ReadDisability()
+        {
+            using (var context = new ProjectDbContext())
+            {
+                var disabilities = await context.Disabilities
+                    .Where(disability => !string.IsNullOrWhiteSpace(disability.Name))
+                    .ToListAsync();
+                return disabilities;
+            }
+        }
+
+        static async Task<List<Review>> ReadReview()
+        {
+            using (var context = new ProjectDbContext())
+            {
+                var reviews = await context.Reviews
+                    .Where(review => !string.IsNullOrWhiteSpace(review.Comment))
+                    .ToListAsync();
+                return reviews;
+            }
+        }
+
+        static async Task<List<Content>> ReadContents()
+        {
+            using (var context = new ProjectDbContext())
+            {
+                var contents = await context.Contents
+                    .Where(content => !string.IsNullOrWhiteSpace(content.Name))
+                    .ToListAsync();
+                return contents;
+            }
+        }
+
+        static async Task<List<User>> ReadUsers()
+        {
+            using (var context = new ProjectDbContext())
+            {
+                var users = await context.Users
+                    .Where(user => !string.IsNullOrWhiteSpace(user.FirstName))
+                    .ToListAsync();
+                return users;
+            }
         }
 
         static async Task CreateData()
