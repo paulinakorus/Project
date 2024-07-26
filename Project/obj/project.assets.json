@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pauko\\Desktop\\Studia\\Kursy\\Volvo NET Academy\\Project\\Project\\Project\\Project.csproj",
-      "projectName": "Project",
-      "projectPath": "C:\\Users\\pauko\\Desktop\\Studia\\Kursy\\Volvo NET Academy\\Project\\Project\\Project\\Project.csproj",
+      "projectUniqueName": "C:\\Users\\pauko\\Desktop\\Studia\\Kursy\\Volvo NET Academy\\Project\\Project\\Project\\Website.csproj",
+      "projectName": "Website",
+      "projectPath": "C:\\Users\\pauko\\Desktop\\Studia\\Kursy\\Volvo NET Academy\\Project\\Project\\Project\\Website.csproj",
       "packagesPath": "C:\\Users\\pauko\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\pauko\\Desktop\\Studia\\Kursy\\Volvo NET Academy\\Project\\Project\\Project\\obj\\",
       "projectStyle": "PackageReference",

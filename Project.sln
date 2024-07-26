@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project", "Project\Project.csproj", "{E34016AE-383E-4BA9-8FF1-9E7547FA29B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website", "Project\Website.csproj", "{E34016AE-383E-4BA9-8FF1-9E7547FA29B6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Project.Data\Data.csproj", "{2C464E95-1710-47CD-AA42-5A2F4F503254}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Project.Database\Database.csproj", "{294F8FFA-3EB7-459F-9475-C54051DCC891}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database", "Project.Database\Database.csproj", "{294F8FFA-3EB7-459F-9475-C54051DCC891}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

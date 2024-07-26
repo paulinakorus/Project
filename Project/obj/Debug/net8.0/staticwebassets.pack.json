@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\pauko\\Desktop\\Studia\\Kursy\\Volvo NET Academy\\Project\\Project\\Project\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Project.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Project.bundle.scp.css"
+      "Id": "C:\\Users\\pauko\\Desktop\\Studia\\Kursy\\Volvo NET Academy\\Project\\Project\\Project\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Website.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Website.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\pauko\\Desktop\\Studia\\Kursy\\Volvo NET Academy\\Project\\Project\\Project\\wwwroot\\css\\site.css",
@@ -245,20 +245,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Project.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Website.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Project.props",
-      "PackagePath": "build\\Project.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Website.props",
+      "PackagePath": "build\\Website.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Project.props",
-      "PackagePath": "buildMultiTargeting\\Project.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Website.props",
+      "PackagePath": "buildMultiTargeting\\Website.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Project.props",
-      "PackagePath": "buildTransitive\\Project.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Website.props",
+      "PackagePath": "buildTransitive\\Website.props"
     }
   ],
   "ElementsToRemove": []
